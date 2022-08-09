@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light rounded-10 p-4 my-3">
+  <div class="p-4 bg-light rounded-10 my-3">
     <div class="d-md-flex align-items-center">
       <h3 class="col-md-3">Pool {{ poolData.id }}</h3>
       <div class="d-md-flex col text-md-center">
@@ -35,7 +35,22 @@
         </div>
       </div>
     </div>
-    <div v-if="poolData.status == 'Active'" class="">
+    <div class="text-end p-2">
+      <b-icon
+        v-if="!expansion"
+        icon="chevron-down"
+        class="h4 m-0"
+        @click="expansion = !expansion"
+      ></b-icon>
+      <b-icon
+        v-if="expansion"
+        icon="chevron-up"
+        class="h4 m-0"
+        @click="expansion = !expansion"
+      ></b-icon>
+    </div>
+
+    <div v-if="expansion" class="">
       <div
         class="bg_grayLight rounded-10 p-3 my-2 d-md-flex align-items-center"
       >
@@ -49,7 +64,7 @@
               <img :src="poolData.img1" alt=""
             /></span>
             <div class="mx-sm-2 col">
-               <span class="fs-14"> Vault contribution</span> <br />
+              <span class="fs-14"> Vault contribution</span> <br />
               <span class="fw-bold">{{ poolData.Vault_contribution }}</span>
             </div>
           </div>
@@ -57,7 +72,7 @@
           <div class="my-2 d-flex">
             <span class="col-3 d-sm-none"></span>
             <div class="mx-sm-2 col">
-              <span class="fs-14">  Single contribution </span><br />
+              <span class="fs-14"> Single contribution </span><br />
               <span class="fw-bold">{{ poolData.Single_contribution }}</span>
             </div>
           </div>
@@ -65,7 +80,7 @@
           <div class="my-2 d-flex">
             <span class="col-3 d-sm-none"></span>
             <div class="mx-sm-2 col">
-               <span class="fs-14"> Farming contribution</span> <br />
+              <span class="fs-14"> Farming contribution</span> <br />
               <span class="fw-bold">{{ poolData.Farming_contribution }}</span>
             </div>
           </div>
@@ -79,7 +94,7 @@
           <img :src="poolData.img2" alt="" />
           <span class="fw-bold">BNB</span>
         </div>
-        <div class="d-sm-flex justify-content-between col fs-14">
+        <div class="d-sm-flex justify-content-between col">
           <div class="d-flex my-2">
             <span class="col-3 d-sm-none">
               <img :src="poolData.img2" alt=""
@@ -119,7 +134,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      expansion: false,
+    };
   },
   props: {
     poolData: {

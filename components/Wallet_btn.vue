@@ -13,7 +13,7 @@
       {{ CurrentAccount && ChainId != 97 ? "network erore" : " Conect Wallet" }}
     </div>
     <div
-      v-if="CurrentAccount || ChainId !== 97"
+      v-if="CurrentAccount && ChainId == 97"
       class="wallet d-flex align-items-center"
     >
       <span class="me-1"

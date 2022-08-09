@@ -20,7 +20,7 @@
         <h1 class="p-2">Pool Statistics</h1>
         <Pool_Statistics />
       </div>
-      <div class="">
+      <div class="my-3">
         <h1 class="p-2">Pools</h1>
         <div class="" v-for="pool in pools" :key="pool.id">
    <Pool_card :poolData ="pool" />
@@ -61,6 +61,12 @@ const pools = [
     rewards: 0.5,
     participants: 68,
     status: "Pending",
+     Vault_contribution:12229.89,
+    Single_contribution:12229.89,
+    Farming_contribution:12229.89,
+     Miner_sales_contribution:12229.89,
+    Land_sales_contribution:12229.89,
+    Maintainance_contribution:12229.89,
 
   },
     {
@@ -71,6 +77,12 @@ const pools = [
     rewards: 0.5,
     participants: 68,
     status: "Pending",
+     Vault_contribution:12229.89,
+    Single_contribution:12229.89,
+    Farming_contribution:12229.89,
+     Miner_sales_contribution:12229.89,
+    Land_sales_contribution:12229.89,
+    Maintainance_contribution:12229.89,
 
   },
    {
@@ -81,6 +93,12 @@ const pools = [
     rewards: 0.5,
     participants: 68,
     status: "Pending",
+     Vault_contribution:12229.89,
+    Single_contribution:12229.89,
+    Farming_contribution:12229.89,
+     Miner_sales_contribution:12229.89,
+    Land_sales_contribution:12229.89,
+    Maintainance_contribution:12229.89,
 
   },
   {
@@ -91,6 +109,12 @@ const pools = [
     rewards: 1,
     participants: 68,
     status: "Pending",
+     Vault_contribution:12229.89,
+    Single_contribution:12229.89,
+    Farming_contribution:12229.89,
+     Miner_sales_contribution:12229.89,
+    Land_sales_contribution:12229.89,
+    Maintainance_contribution:12229.89,
 
   },
   ];

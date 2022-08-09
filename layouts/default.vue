@@ -37,6 +37,7 @@ export default {
   margin: 0 auto;
   overflow: hidden;
   position: relative;
+  min-height: 200vh;
 
   .Sidebar {
     min-width: 270px;

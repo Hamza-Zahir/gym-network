@@ -42,7 +42,7 @@
             <span class="secondary w-25"></span>
           </div>
           <div class="text-center px-2 my-1">$200.000</div>
-          <div v-if="!showDetails" class="detailsCard bg-light rounded-10 p-2">
+          <div v-if="showDetails" class="detailsCard bg-light rounded-10 p-2">
             <div class="d-flex justify-content-between">
               <h5>50% Turnover rule</h5>
               <b-icon

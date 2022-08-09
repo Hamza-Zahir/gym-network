@@ -50,13 +50,13 @@
                 showTimesCard = !showTimesCard;
               }
             "
-            :class="timeSelected == time ? 'bg-blueLight' : ''"
-            class="mx-2 px-2 py-1 cp"
+            :class="timeSelected == time ? 'bg-Selected' : ''"
+            class="mx-2 px-2 py-1 cp rounded"
           >
             {{ time }}
           </li>
-          <li class="border mx-2 px-2 py-1 d-none d-xl-block cp">
-            Select date
+          <li class="border mx-2 px-2 py-1 d-none d-xl-block cp rounded">
+            Select date <b-icon icon="calendar" class="ms-1 text-secondary"></b-icon>
           </li>
           <li
             class="mx-2 px-2 py-1 d-none d-xl-block fw-bold text-secondary cp"
@@ -67,28 +67,21 @@
       </div>
     </div>
     <div class="img mt-3">
-      <img
-        src="~/assets/images/schematicDiagram_sm.png"
-        alt=""
-        class="w-100 d-sm-none"
-      />
-      <img
-        src="~/assets/images/schematicDiagram_bg.png"
-        alt=""
-        class="w-100 d-none d-sm-block"
-      />
+      <Graph/>
     </div>
   </div>
 </template>
 <script>
+import Graph from './graph.vue';
 export default {
-  data() {
-    return {
-      showTimesCard: false,
-      timeSelected: "Hour",
-      times: ["Hour", "Day", "Week", "Month", "Year", "All time"],
-    };
-  },
+    data() {
+        return {
+            showTimesCard: false,
+            timeSelected: "Hour",
+            times: ["Hour", "Day", "Week", "Month", "Year", "All time"],
+        };
+    },
+    components: { Graph }
 };
 </script>
 
@@ -114,6 +107,7 @@ export default {
   }
   .bg-blueLight {
     background: #edf0f4;
+
   }
   .times-Box {
     position: relative;
@@ -123,6 +117,9 @@ export default {
       left: 0;
       right: 0;
     }
+  }
+  .bg-Selected{
+background: #c0dbfd;
   }
 }
 </style>
