@@ -3,7 +3,7 @@
     <h3 class="m-0 p-0 cp" @click="setShowSidbar(!showSidbar)">
       <span class="bluelogo rounded-circle me-2">
         <img
-          src="../assets/images/bluelogo.png"
+          src="~/assets/images/bluelogo.png"
           class="rounded-circle"
           alt=""
         />
@@ -50,7 +50,7 @@
       <span
         class="me-2 cp border rounded-circle dots d-flex justify-content-center align-items-center cp border rounded-circle"
       >
-        <img src="../assets/images/Income.png" alt="" />
+        <img src="~/assets/images/Income.png" alt="" />
       </span>
       <div class="me-2"><Wallet_btn /></div>
     </div>
@@ -68,7 +68,7 @@ export default {
       showLanguages: false,
     };
   },
-  
+
   computed: {
     ...mapGetters(["showSidbar"]),
   },

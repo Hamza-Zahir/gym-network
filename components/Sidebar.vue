@@ -3,7 +3,7 @@
     <div class="">
       <div class="h5 d-flex align-items-center text-light">
         <span class="logo">
-          <img src="../assets/images/logo.png" alt="" class="" />
+          <img src="~/assets/images/logo.png" alt="" class="" />
         </span>
         <span class="me-4  ms-2">Gym Network</span>
         <b-icon
@@ -65,6 +65,7 @@
 
 <script>
 const links = [
+
   {
     icon: "people-fill",
     title: "Career status",
@@ -93,12 +94,6 @@ const links = [
     icon: "bar-chart-line",
     title: "Single pool income",
     link: "Single_pool_income",
-
-  },
-  {
-    icon: "bar-chart-line",
-    title: "Level pool",
-    link: "Level_pool",
 
   },
   {

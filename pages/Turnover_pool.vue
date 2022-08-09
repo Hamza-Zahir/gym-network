@@ -7,10 +7,10 @@
         <nuxt-link to="/Turnover_pool" class="text-dark link mx-3"
           >Turnover pools</nuxt-link
         >
-        <nuxt-link to="/Turnover_pool/id" class="text-dark link mx-3"
+        <nuxt-link to="/" class="text-dark link mx-3"
           >Tax pools (1mo)</nuxt-link
         >
-        <nuxt-link to="/Turnover_pool/id" class="text-dark link mx-3"
+        <nuxt-link to="/" class="text-dark link mx-3"
           >Tax pools (6mo)</nuxt-link
         >
       </div>
@@ -61,7 +61,7 @@ const pools = [
     rewards: 0.5,
     participants: 68,
     status: "Pending",
- 
+
   },
     {
     id:3,
