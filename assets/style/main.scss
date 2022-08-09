@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #F5F5F5;
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  // &:hover{
+
+  // }
+}
+.fw-600 {
+  font-weight: 600;
+}
+.rounded-10 {
+  border-radius: 10px;
+}
+.cp {
+  cursor: pointer;
+}
+.fs-14{
+  font-size: 14px;
+}
