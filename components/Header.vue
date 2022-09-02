@@ -1,7 +1,7 @@
 <template>
   <div class="m-0 d-flex justify-content-between p-2">
-    <h3 class="m-0 p-0 cp" @click="setShowSidbar(!showSidbar)">
-      <span class="bluelogo rounded-circle me-2">
+    <h3 class="m-0 p-0 cp d-flex align-items-center" @click="setShowSidbar(!showSidbar)">
+      <span class="bluelogo rounded-circle me-2 ">
         <img
           src="~/assets/images/bluelogo.png"
           class="rounded-circle"

@@ -12,11 +12,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    // script: [
-    //   {
-    //     href: "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js",
-    //   },
-    // ],
+  
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

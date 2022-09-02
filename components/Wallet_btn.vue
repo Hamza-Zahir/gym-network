@@ -1,8 +1,8 @@
 <template>
-  <div class="">
+  <div class="wallet_btn">
     <div
       v-if="!CurrentAccount || ChainId != 97"
-      class="btn btn-primary"
+      class="btn btn-primary px-1 px-sm-2"
       :class="CurrentAccount && ChainId != 97 ? 'btn-warning' : ''"
       @click="
         () => {
@@ -51,20 +51,27 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.wallet {
-  .account {
-    font-size: 14px;
-  }
-  img {
+.wallet_btn{
+font-size: 14px;
+.btn{
+  font-size: 12px;
+
+}
+ img {
     width: 30px;
   }
   @media (min-width: 425px) {
-    .account {
+
       font-size: 16px;
-    }
+.btn{
+  font-size: 15px;
+
+}
     img {
       width: 35px;
     }
   }
 }
+
+
 </style>

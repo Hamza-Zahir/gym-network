@@ -5,16 +5,22 @@
         Turnover progress
         <b-icon icon="info-circle" class="h4 m-0 text-secondary"></b-icon>
       </h2>
-
       <div class="pools">
         <div v-for="(pool, i) in pools" :key="`pool${i + 1}`" class="pool col">
-          <div class="lign"></div>
+          <div class="lign">
+            <span
+              class="currentPoolLign"
+              :style="currentPoolStyl(pools, currentPool, pool, pools[i - 1])"
+            ></span>
+          </div>
+          <!-- currentPoolStyl(_pools, _currentPool, _pool, _previousPoll) -->
           <div class="text ms-auto my-2 text-center fw-600">
             pool {{ i + 1 }}
             <div class="text-secondary">{{ pool }}</div>
           </div>
         </div>
       </div>
+
       <div class="d-md-flex">
         <div class="withdraw px-2 py-3 rounded-10 m-2 col">
           <h5 class="mb-4">
@@ -31,7 +37,9 @@
               50% turnover rule
               <b-icon icon="info-circle" class="h5 m-0 text-secondary"></b-icon>
             </h5>
-            <span class="fs-12 text-primary cp" @click="showDetails = !showDetails"
+            <span
+              class="fs-12 text-primary cp"
+              @click="showDetails = !showDetails"
               >View details</span
             >
           </div>
@@ -81,7 +89,7 @@
                   ></b-icon>
                 </h2>
               </div>
-              <div class="d-sm-flex d-md-block d-lg-flex ">
+              <div class="d-sm-flex d-md-block d-lg-flex">
                 <div class="border rounded-10 p-2 my-2 mx-sm-2 col">
                   <div class="text-secondary py-2">Generated turnover</div>
                   <h2>216k $</h2>
@@ -124,27 +132,28 @@
                   </div>
                 </div>
               </div>
-
             </div>
             <div class="mt-3">
-                <h4>Other partners</h4>
-                <div class="d-flex justify-content-between align-items-center py-2">
-                  <span
-                   class="fw-600"
-                    ><img src="~/assets/images/Ellipse1.png" alt="" />
-                    0x85E7...7340e</span
-                  >
-                  <span class="fw-bold">200k $</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-center py-2">
-                  <span
-                  class="fw-600"
-                    ><img src="~/assets/images/Ellipse1.png" alt="" />
-                    0x85E7...7340e</span
-                  >
-                  <span class="fw-bold">200k $</span>
-                </div>
+              <h4>Other partners</h4>
+              <div
+                class="d-flex justify-content-between align-items-center py-2"
+              >
+                <span class="fw-600"
+                  ><img src="~/assets/images/Ellipse1.png" alt="" />
+                  0x85E7...7340e</span
+                >
+                <span class="fw-bold">200k $</span>
               </div>
+              <div
+                class="d-flex justify-content-between align-items-center py-2"
+              >
+                <span class="fw-600"
+                  ><img src="~/assets/images/Ellipse1.png" alt="" />
+                  0x85E7...7340e</span
+                >
+                <span class="fw-bold">200k $</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -156,14 +165,36 @@ export default {
   data() {
     return {
       showDetails: false,
-      pools: [200000, 400000, 400000, 500000, 600000],
-      currentPool: 290000,
+      pools: [200000, 300000, 400000, 500000, 600000],
+      currentPool: 340000,
     };
+  },
+  methods: {
+    currentPoolStyl(_pools, _currentPool, _pool, _previousPoll) {
+      let _width;
+      let _display = "none";
+      let _color= "white";
+
+      if (_currentPool >= _pool) {
+        _width = 100;
+        _display = "block";
+     
+      }
+
+      if (_currentPool < _pool && _currentPool > _previousPoll) {
+        let styps = _pools[_pools.length - 1] / (_pools.length + 1);
+
+        _width = 100 - (100 / styps) * (_pool % _currentPool);
+        _display = "block";
+        _color = "transparent";
+      }
+      return `width: ${_width}%; display: ${_display}; color: ${_color};`;
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
-.fs-12{
+.fs-12 {
   font-size: 12px;
 }
 .pools {
@@ -177,16 +208,43 @@ export default {
   &::-webkit-scrollbar {
     display: none;
   }
-
   .pool {
     min-width: 150px;
-  }
-  .lign {
-    height: 6px;
-    margin-left: 2px;
-    background: #a8a8a8;
-    position: relative;
-    z-index: 0;
+
+    .lign {
+      height: 6px;
+      margin-left: 2px;
+      background: #a8a8a8;
+      position: relative;
+      z-index: 0;
+
+      .currentPoolLign {
+        height: 100%;
+        background: blue;
+        position: absolute;
+        top: 0;
+        left: 0%;
+        display: none;
+        color: white;
+        &::before {
+          content: "7";
+          height: 15px;
+          width: 15px;
+          background: inherit;
+          border-radius: 50%;
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          font-size: 10px;
+          font-weight: bold;
+          color: inherit;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: rotateX(180deg) rotateZ(-40deg);
+        }
+      }
+    }
   }
   .text {
     width: fit-content;

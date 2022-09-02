@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 bg-light rounded-10 my-3">
+  <div class="p-3 py-2 bg-light rounded-10 my-3">
     <div class="d-md-flex align-items-center">
       <h3 class="col-md-3">Pool {{ poolData.id }}</h3>
       <div class="d-md-flex col text-md-center">
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="text-end p-2">
+    <div class="text-end p-2 py-1">
       <b-icon
         v-if="!expansion"
         icon="chevron-down"
